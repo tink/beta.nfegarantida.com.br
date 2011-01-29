@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>NFe Garantida</title>
+ <link href="http://beta.nfegarantida.com.br/atom.xml" rel="self"/>
+ <link href="http://beta.nfegarantida.com.br/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://beta.nfegarantida.com.br/</id>
+ <author>
+   <name>NFe Garantida</name>
+   <email>nfegarantida@tink.com.br</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://beta.nfegarantida.com.br/{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://beta.nfegarantida.com.br/{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
