@@ -15,11 +15,6 @@
         %h2#logo
           %a(href='/') NFe Garantida
         %ul#nav
-          %li
-            %a{ :class => "#{'selected' if(page.title == 'Início')}", :href => '/' } Início
-          - site.posts.each do |post|
-            %li
-              %a{ :class => "#{'selected' if(page.title == post.title)}", :href => "#{post.url}" }= post.title
       #content
         = content
       .rule
